@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who am i?</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .intro-text {
+            text-align: left;
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 10px;
+        }
+
+        .intro-text p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .intro-text strong {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .intro-text p:hover {
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            padding: 5px;
+            transition: 0.3s;
+        }
+
+        .character-container {
+            background-color: #88e0f7;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            gap: 50px; 
+            padding: 100px 0;
+        }
+
+        .character-container img {
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .character-container img:hover {
+            transform: scale(1.1);
+        }
+
+        body.about-page {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body class="about-page">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="hobby.html">취미</a></li>
+                <li><a href="food.html">좋아하는 음식</a></li>
+            </ul>
+        </nav>
+        <h1>Who am I?</h1>
+    </header>
+
+    <section class="character-container">
+        <img src="/img/스폰지밥.png" alt="스폰지밥">
+        <div class="intro-text">
+            <p><strong>이름:</strong> 신수현</p>
+            <p><strong>성별:</strong> 남</p>
+            <p><strong>생년월일:</strong> 1998.01.29</p>
+            <p><strong>인스타그램:</strong> hyun_0129</p>
+        </div>
+    </section>
+</body>
+</html>

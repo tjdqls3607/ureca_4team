@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background: #f8e0a4;
+    color: black;
+    padding: 30px 0;
+    margin-bottom: 0; /* 헤더 아래 여백 제거 */
+}
+
+header h1 {
+    font-size: 80px;
+    margin-bottom: 0px;
+}
+
+nav {
+    background: #333;
+    padding: 10px 0;
+    margin: 0; /* 네비게이션 바 아래 여백 제거 */
+    position: sticky; /* 네비게이션 바를 화면 상단에 고정 */
+    top: 0;
+    width: 100%; /* 화면 너비 100% */
+    z-index: 1000; /* 네비게이션 바가 항상 위에 보이게 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+.character-container {
+    background-color: #88e0f7;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 0;
+    padding: 100px 0; /* 동일한 padding 값 */
+}
+
+.character-container a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.character-container img {
+    width: 300px;
+    height: 400px;
+    border-radius: 0%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.character-container img:hover {
+    transform: scale(1.1);
+}
+
+/* About 페이지 배경 수정 */
+body.about-page {
+    background-color: #f4f4f4; /* 흰색 배경 제거 */
+} 

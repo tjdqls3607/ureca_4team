@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I like...</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .hobby-list {
+    display: flex;
+    gap: 30px; /* 각 아이템 간격 */
+}
+
+.hobby-item {
+    text-align: center;
+    font-size : 30px;
+}
+
+.hobby-item img {
+    width: 250px; /* 아이콘 크기 */
+    height: 300px;
+    display: block;
+    margin: 0 auto 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">자기소개</a></li>
+                <li><a href="food.html">좋아하는 음식</a></li>
+            </ul>
+        </nav>
+        <h1>I like...</h1>
+    </header>
+
+    <section class="character-container">
+        <!-- 뚱이 이미지 (왼쪽 정렬) -->
+        <img src="/img/뚱이.png" alt="뚱이" class="character-image">
+    
+        <!-- 취미 목록을 가로로 정렬 -->
+        <div class="hobby-list">
+            <div class="hobby-item">
+                <img src="/img/롤.png" alt="게임 아이콘">
+                <p><strong>게임</strong></p>
+            </div>
+            <div class="hobby-item">
+                <img src="/img/태극기휘날리며.png" alt="영화 아이콘">
+                <p><strong>영화</strong></p>
+            </div>
+            <div class="hobby-item">
+                <img src="/img/작은날.png" alt="음악 아이콘">
+                <p><strong>노래</strong> </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
