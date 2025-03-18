@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4조와 함께 해요!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, button {
+            width: calc(100% - 22px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #5c67f2;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4a54e1;
+        }
+        .list {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .entry {
+            background: #e0e7ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .clear-btn {
+            background: #ff4d4d;
+            margin-top: 10px;
+        }
+        .clear-btn:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>4조와 함께 해요!</h2>
+        <form id="applyForm">
+            <input type="text" id="name" placeholder="이름" required>
+            <select id="mbti">
+                <option value="">MBTI 선택</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INTJ">INTJ</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ISFP">ISFP</option>
+                <option value="INFP">INFP</option>
+                <option value="INTP">INTP</option>
+                <option value="ESTP">ESTP</option>
+                <option value="ESFP">ESFP</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ENTP">ENTP</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENTJ">ENTJ</option>
+            </select>
+            <input type="text" id="interest" placeholder="관심사" required>
+            <button type="submit">신청하기</button>
+        </form>
+        <div class="list" id="applicantsList"></div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("applyForm");
+            const list = document.getElementById("applicantsList");
+            const applicants = JSON.parse(localStorage.getItem("applicants")) || [];
+            
+            function renderApplicants() {
+                list.innerHTML = "";
+                applicants.forEach(applicant => {
+                    const div = document.createElement("div");
+                    div.classList.add("entry");
+                    div.innerText = `이름: ${applicant.name}, MBTI: ${applicant.mbti}, 관심사: ${applicant.interest}`;
+                    list.appendChild(div);
+                });
+            }
+            
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const name = document.getElementById("name").value;
+                const mbti = document.getElementById("mbti").value;
+                const interest = document.getElementById("interest").value;
+                
+                if (!name || !mbti || !interest) {
+                    alert("모든 항목을 입력해주세요!");
+                    return;
+                }
+                
+                const newApplicant = { name, mbti, interest };
+                applicants.push(newApplicant);
+                localStorage.setItem("applicants", JSON.stringify(applicants));
+                
+                renderApplicants();
+                form.reset();
+            });
+            
+            renderApplicants();
+        });
+    </script>
+</body>
+</html>
