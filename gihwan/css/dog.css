@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.list {
+    font-size: 36px;
+    color: orange;
+    font-weight: bold;
+}
+
+.answer{
+    font-size : 32px;
+}
