@@ -1,0 +1,55 @@
+body {
+    background-color: bisque;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄로 나눠서 표시 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box; /* 패딩 포함 너비 계산 */
+}
+
+.hobby-item {
+    flex: 0 0 calc(50% - 20px); /* 2열로 나누기 (여백 고려) */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* 이미지와 텍스트 세로 정렬 */
+    align-items: center; /* 내부 요소 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    height: 40vh; /* 높이 조정 */
+    background-color: rgba(255, 255, 255, 0.8); /* 배경에 약간의 투명도 추가 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 10px; /* 여백 추가 */
+    box-sizing: border-box; /* 패딩 포함 너비 계산 */
+}
+
+.hobby-item img {
+    width: 150px; /* 이미지 크기 조정 */
+    height: 150px; /* 이미지 크기 조정 */
+    border-radius: 20%;
+    margin-bottom: 10px;
+}
+
+.pin {
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
