@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넷플릭스 추천</title>
+    <link rel="stylesheet" href="netflix.css"> <!-- External CSS 적용 -->
+    <style>
+        /* Internal CSS 적용 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .recommendations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        p {
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>넷플릭스 추천</h1>
+        <div class="recommendations">
+            <div class="card">
+                <img src="폭싹 속았수다.png" style="border: 3px solid #ff758c;"> <!-- Inline CSS 적용 -->
+                <h2>폭싹 속았수다</h2>
+                <p>제주에서 태어난 '요망진 반항아' 애순이와<br><br>
+                    '팔불출 무쇠' 관식이의 모험 가득한 일생을 사계절로 풀어낸 넷플릭스 시리즈</p>
+            </div>
+            <div class="card">
+                <img src="나혼자만레벨업.png" style="border: 3px solid #ff758c;"> <!-- Inline CSS 적용 -->
+                <h2>나혼자만레벨업</h2>
+                <p>재능 없는 만년 E급 헌터, 성진우.<br>
+                    기이한 던전에서 죽음을 목전에 두지만 위기는 언제나 기회와 함께 찾아오는 법!<br><br>
+                    [플레이어가 되실 자격을 획득하셨습니다.]<br>
+                    "플레이어? 내가 레벨업을 할 수 있다고?"<br><br>
+                    전 세계 헌터 중 유일무이, 전무후무 시스템과 레벨업 능력을 각성한 진우.<br>
+                    세상을 향해 자유를 선포한다!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

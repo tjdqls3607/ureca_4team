@@ -1,0 +1,15 @@
+.page-links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: white;
+    background: #ff758c;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.page-links a:hover {
+    background: #ff5e78;
+}
