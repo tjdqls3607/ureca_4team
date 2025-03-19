@@ -4,40 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4조 소개</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="mainstyle.css"> <!-- External CSS 적용 -->
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4); /* 부드러운 그라디언트 배경 */
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .carousel-container {
+            max-width: 450px; /* 슬라이드 가로 길이 고정 */
+            margin: auto; /* 가운데 정렬 */
+            background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .carousel-item img {
+            width: 400px;
+            height: 600px; /* 고정 높이 설정 */
+            object-fit: cover; /* 이미지 비율 유지하며 크롭 */
+            border-radius: 10px;
+        }
+        .btn-custom {
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(to right, #ff512f, #b71c1c);
+            color: white;
+        }
+        .bottom-padding {
+            padding-bottom: 50px; /* 버튼 아래 여백 추가 */
+        }
+    </style>
 </head>
 <body>
-    <div class="team-container">
-        <h1>4조 소개</h1>
-        <div class="team-members">
-            <div class="team-member" onclick="location.href='../suhyun/Introduce/html/index.html'">
-                <img src="../suhyun/introduce/IMG_3272.jpg" alt="팀원 1">
-                <h2>팀장: 신수현</h2>
+    <h1>4조 소개</h1>
+    
+    <div class="carousel-container">
+        <!-- Bootstrap Carousel -->
+        <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
             </div>
-            <div class="team-member" onclick="location.href='../guntaek/main/main.html'">
-                <img src="../guntaek/image.png" alt="팀원 2">
-                <h2>팀원: 김건택</h2>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="suhyun/introduce/IMG_3272.jpg" class="d-block w-100" alt="팀장 신수현">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color: black">🌟 팀장: 신수현 🌟</h5>
+                        <a href="suhyun/Introduce/html/index.html" class="btn btn-custom">자기소개 보러가기</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="guntaek/image.png" class="d-block w-100" alt="팀원 김건택">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>🎯 팀원: 김건택 🎯</h5>
+                        <a href="guntaek/main/main.html" class="btn btn-custom">자기소개 보러가기</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="gihwan/image.png" class="d-block w-100" alt="팀원 박기환">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>🚀 팀원: 박기환 🚀</h5>
+                        <a href="gihwan/html/main.html" class="btn btn-custom">자기소개 보러가기</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="soyeon/image.png" class="d-block w-100" alt="팀원 박소연">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>🎨 팀원: 박소연 🎨</h5>
+                        <a href="soyeon/main.html" class="btn btn-custom">자기소개 보러가기</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="leebonkyu/image.png" class="d-block w-100" alt="팀원 이본규">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>🔬 팀원: 이본규 🔬</h5>
+                        <a href="leebonkyu/html/index.html" class="btn btn-custom">자기소개 보러가기</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="seongbin/image.png" class="d-block w-100" alt="팀원 정성빈">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>🛠 팀원: 정성빈 🛠</h5>
+                        <a href="seongbin/html/main.html" class="btn btn-custom">자기소개 보러가기</a>
+                    </div>
+                </div>
             </div>
-            <div class="team-member" onclick="location.href='../gihwan/html/main.html'">
-                <img src="../gihwan/image.png" alt="팀원 3">
-                <h2>팀원: 박기환</h2>
-            </div>
-            <div class="team-member" onclick="location.href='../soyeon/main.html'">
-                <img src="../soyeon/image.png" alt="팀원 4">
-                <h2>팀원: 박소연</h2>
-            </div>
-            <div class="team-member" onclick="location.href='../leebonkyu/html/index.html'">
-                <img src="../leebonkyu/image.png" alt="팀원 5">
-                <h2>팀원: 이본규</h2>
-            </div>
-            <div class="team-member" onclick="location.href='../seongbin/html/main.html'">
-                <img src="../seongbin/image.png" alt="팀원 6">
-                <h2>팀원: 정성빈</h2>
-            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
-    <div class="apply-button-container">
-        <a href="../apply/apply.html" class="apply-button">4조와 함께하기</a>
+    
+    <div class="text-center mt-4 bottom-padding">
+        <a href="apply/apply.html" class="btn btn-custom">4조와 함께하기</a>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
