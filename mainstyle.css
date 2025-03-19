@@ -93,3 +93,23 @@ body {
 .apply-button:hover {
     background-color: #4a70eb; /* 옅은 파란색 */
 }
+
+.card {
+    width: 14rem;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card img {
+    height: 250px;
+    object-fit: cover;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container-mt-3 {
+    margin-top: 100px;
+}
