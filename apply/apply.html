@@ -4,84 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4조와 함께 해요!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background: linear-gradient(to right, #74ebd5, #acb6e5); /* 부드러운 그라디언트 배경 */
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             text-align: center;
-            padding: 20px;
         }
         .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.8); /* 반투명 배경 */
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-        input, select, button {
-            width: calc(100% - 22px);
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+        .form-control {
+            font-size: 1rem;
         }
-        button {
-            background: #5c67f2;
-            color: white;
-            cursor: pointer;
+        .btn-primary {
+            background: deepskyblue;
+            border: none;
         }
-        button:hover {
-            background: #4a54e1;
+        .btn-primary:hover {
+            background: skyblue;
         }
-        .list {
+        .btn-center {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
-            text-align: left;
-        }
-        .entry {
-            background: #e0e7ff;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 5px 0;
-        }
-        .clear-btn {
-            background: #ff4d4d;
-            margin-top: 10px;
-        }
-        .clear-btn:hover {
-            background: #cc0000;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>4조와 함께 해요!</h2>
+        <h2 class="text-center mb-4">4조와 함께 해요!</h2>
         <form id="applyForm">
-            <input type="text" id="name" placeholder="이름" required>
-            <select id="mbti">
-                <option value="">MBTI 선택</option>
-                <option value="ISTJ">ISTJ</option>
-                <option value="ISFJ">ISFJ</option>
-                <option value="INFJ">INFJ</option>
-                <option value="INTJ">INTJ</option>
-                <option value="ISTP">ISTP</option>
-                <option value="ISFP">ISFP</option>
-                <option value="INFP">INFP</option>
-                <option value="INTP">INTP</option>
-                <option value="ESTP">ESTP</option>
-                <option value="ESFP">ESFP</option>
-                <option value="ENFP">ENFP</option>
-                <option value="ENTP">ENTP</option>
-                <option value="ESTJ">ESTJ</option>
-                <option value="ESFJ">ESFJ</option>
-                <option value="ENFJ">ENFJ</option>
-                <option value="ENTJ">ENTJ</option>
-            </select>
-            <input type="text" id="interest" placeholder="관심사" required>
-            <button type="submit">신청하기</button>
+            <div class="mb-3">
+                <label for="name" class="form-label">이름</label>
+                <input type="text" id="name" class="form-control" placeholder="이름을 입력하세요" required>
+            </div>
+            <div class="mb-3">
+                <label for="mbti" class="form-label">MBTI</label>
+                <select id="mbti" class="form-select" required>
+                    <option value="">MBTI 선택</option>
+                    <option value="ISTJ">ISTJ</option>
+                    <option value="ISFJ">ISFJ</option>
+                    <option value="INFJ">INFJ</option>
+                    <option value="INTJ">INTJ</option>
+                    <option value="ISTP">ISTP</option>
+                    <option value="ISFP">ISFP</option>
+                    <option value="INFP">INFP</option>
+                    <option value="INTP">INTP</option>
+                    <option value="ESTP">ESTP</option>
+                    <option value="ESFP">ESFP</option>
+                    <option value="ENFP">ENFP</option>
+                    <option value="ENTP">ENTP</option>
+                    <option value="ESTJ">ESTJ</option>
+                    <option value="ESFJ">ESFJ</option>
+                    <option value="ENFJ">ENFJ</option>
+                    <option value="ENTJ">ENTJ</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="interest" class="form-label">관심사</label>
+                <input type="text" id="interest" class="form-control" placeholder="관심사를 입력하세요" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">신청하기</button>
         </form>
-        <div class="list" id="applicantsList"></div>
+    </div>
+    
+    <!-- 신청 완료 모달 -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">🎉 신청 완료! 🎉</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    신청이 성공적으로 완료되었습니다! 🎊
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 신청자 목록 보기 버튼 -->
+    <div class="btn-center">
+        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#applicantsModal">
+            📝 신청자 목록 보기
+        </button>
+    </div>
+    
+    <!-- Bootstrap Modal (신청자 목록) -->
+    <div class="modal fade" id="applicantsModal" tabindex="-1" aria-labelledby="applicantsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applicantsModalLabel">📜 신청자 목록</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="applicantsList">
+                    <!-- 신청자 목록이 여기에 추가됨 -->
+                </div>
+            </div>
+        </div>
     </div>
     
     <script>
@@ -92,12 +124,19 @@
             
             function renderApplicants() {
                 list.innerHTML = "";
-                applicants.forEach(applicant => {
+                applicants.forEach((applicant, index) => {
                     const div = document.createElement("div");
-                    div.classList.add("entry");
-                    div.innerText = `이름: ${applicant.name}, MBTI: ${applicant.mbti}, 관심사: ${applicant.interest}`;
+                    div.classList.add("entry", "p-2", "rounded", "bg-light", "border", "d-flex", "justify-content-between", "align-items-center");
+                    div.innerHTML = `이름: ${applicant.name}, MBTI: ${applicant.mbti}, 관심사: ${applicant.interest} 
+                        <button class='btn btn-danger btn-sm' onclick='deleteApplicant(${index})'>X</button>`;
                     list.appendChild(div);
                 });
+            }
+            
+            window.deleteApplicant = (index) => {
+                applicants.splice(index, 1);
+                localStorage.setItem("applicants", JSON.stringify(applicants));
+                renderApplicants();
             }
             
             form.addEventListener("submit", (e) => {
@@ -105,18 +144,11 @@
                 const name = document.getElementById("name").value;
                 const mbti = document.getElementById("mbti").value;
                 const interest = document.getElementById("interest").value;
-                
-                if (!name || !mbti || !interest) {
-                    alert("모든 항목을 입력해주세요!");
-                    return;
-                }
-                
-                const newApplicant = { name, mbti, interest };
-                applicants.push(newApplicant);
+                applicants.push({ name, mbti, interest });
                 localStorage.setItem("applicants", JSON.stringify(applicants));
-                
                 renderApplicants();
                 form.reset();
+                new bootstrap.Modal(document.getElementById('successModal')).show();
             });
             
             renderApplicants();
