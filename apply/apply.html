@@ -4,40 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4조와 함께 해요!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            text-align: center;
-            padding: 20px;
+        /* 네브바 스타일 */
+        .navbar {
+            background-color: #5c67f2;
         }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffcb5e !important;
+        }
+
+        /* 메인 컨테이너 스타일 */
         .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
+            max-width: 450px;
+            background-color: #ffffff;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
-        input, select, button {
-            width: calc(100% - 22px);
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+
+        /* 입력 폼 스타일 */
+        .form-control {
+            border-radius: 8px;
         }
-        button {
-            background: #5c67f2;
-            color: white;
-            cursor: pointer;
+        
+        .btn-primary {
+            background-color: #5c67f2;
+            border: none;
         }
-        button:hover {
-            background: #4a54e1;
+        .btn-primary:hover {
+            background-color: #4a54e1;
         }
+
+        /* 성별 선택 정렬 */
+        .gender-options {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* 지원자 목록 스타일 */
         .list {
             margin-top: 20px;
-            text-align: left;
         }
         .entry {
             background: #e0e7ff;
@@ -45,80 +57,119 @@
             border-radius: 5px;
             margin: 5px 0;
         }
-        .clear-btn {
-            background: #ff4d4d;
-            margin-top: 10px;
-        }
-        .clear-btn:hover {
-            background: #cc0000;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>4조와 함께 해요!</h2>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">4조 프로젝트</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">4조 소개</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../apply/apply.html">4조와 함께하기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">4조와 함께 해요!</h2>
         <form id="applyForm">
-            <input type="text" id="name" placeholder="이름" required>
-            <select id="mbti">
-                <option value="">MBTI 선택</option>
-                <option value="ISTJ">ISTJ</option>
-                <option value="ISFJ">ISFJ</option>
-                <option value="INFJ">INFJ</option>
-                <option value="INTJ">INTJ</option>
-                <option value="ISTP">ISTP</option>
-                <option value="ISFP">ISFP</option>
-                <option value="INFP">INFP</option>
-                <option value="INTP">INTP</option>
-                <option value="ESTP">ESTP</option>
-                <option value="ESFP">ESFP</option>
-                <option value="ENFP">ENFP</option>
-                <option value="ENTP">ENTP</option>
-                <option value="ESTJ">ESTJ</option>
-                <option value="ESFJ">ESFJ</option>
-                <option value="ENFJ">ENFJ</option>
-                <option value="ENTJ">ENTJ</option>
-            </select>
-            <input type="text" id="interest" placeholder="관심사" required>
-            <button type="submit">신청하기</button>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="name" placeholder="이름" required>
+            </div>
+            <div class="mb-3">
+                <input type="date" class="form-control" id="birthday" required>
+            </div>
+            <div class="mb-3 gender-options">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male">
+                    <label class="form-check-label" for="male">남</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" checked>
+                    <label class="form-check-label" for="female">여</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <select class="form-control" id="mbti" required>
+                    <option value="">MBTI 선택</option>
+                    <option value="ISTJ">ISTJ</option>
+                    <option value="ISFJ">ISFJ</option>
+                    <option value="INFJ">INFJ</option>
+                    <option value="INTJ">INTJ</option>
+                    <option value="ISTP">ISTP</option>
+                    <option value="ISFP">ISFP</option>
+                    <option value="INFP">INFP</option>
+                    <option value="INTP">INTP</option>
+                    <option value="ESTP">ESTP</option>
+                    <option value="ESFP">ESFP</option>
+                    <option value="ENFP">ENFP</option>
+                    <option value="ENTP">ENTP</option>
+                    <option value="ESTJ">ESTJ</option>
+                    <option value="ESFJ">ESFJ</option>
+                    <option value="ENFJ">ENFJ</option>
+                    <option value="ENTJ">ENTJ</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="interest" placeholder="관심사" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">신청하기</button>
         </form>
+        
         <div class="list" id="applicantsList"></div>
     </div>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("applyForm");
             const list = document.getElementById("applicantsList");
             const applicants = JSON.parse(localStorage.getItem("applicants")) || [];
-            
             function renderApplicants() {
-                list.innerHTML = "";
-                applicants.forEach(applicant => {
-                    const div = document.createElement("div");
-                    div.classList.add("entry");
-                    div.innerText = `이름: ${applicant.name}, MBTI: ${applicant.mbti}, 관심사: ${applicant.interest}`;
-                    list.appendChild(div);
-                });
-            }
-            
+    list.innerHTML = "";
+    applicants.forEach(applicant => {
+        const div = document.createElement("div");
+        div.classList.add("entry", "p-3", "shadow-sm", "rounded");
+
+        div.innerHTML = `
+            <h5 class="mb-1 fw-bold">${applicant.name} (${applicant.gender})</h5>
+            <p class="mb-1"><strong>생년월일:</strong> ${applicant.birthday}</p>
+            <p class="mb-1"><strong>MBTI:</strong> ${applicant.mbti}</p>
+            <p class="mb-0"><strong>관심사:</strong> ${applicant.interest}</p>
+        `;
+
+        list.appendChild(div);
+    });
+}
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 const name = document.getElementById("name").value;
+                const birthday = document.getElementById("birthday").value;
+                const gender = document.querySelector('input[name="gender"]:checked').id === "male" ? "남" : "여";
                 const mbti = document.getElementById("mbti").value;
                 const interest = document.getElementById("interest").value;
-                
-                if (!name || !mbti || !interest) {
+              
+                if (!name || !mbti || !interest || !birthday || !gender) {
                     alert("모든 항목을 입력해주세요!");
                     return;
                 }
-                
-                const newApplicant = { name, mbti, interest };
+
+                const newApplicant = { name, birthday, gender,mbti, interest };
                 applicants.push(newApplicant);
                 localStorage.setItem("applicants", JSON.stringify(applicants));
-                
                 renderApplicants();
                 form.reset();
             });
-            
+
             renderApplicants();
         });
     </script>
