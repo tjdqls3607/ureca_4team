@@ -4,40 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4조 소개</title>
-    <link rel="stylesheet" href="mainstyle.css"> <!-- External CSS 적용 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        .team-container {
+            margin-top: 50px;
+            padding: 20px;
+        }
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid white;
+            transition: transform 0.3s ease-in-out;
+        }
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            backdrop-filter: blur(15px);
+            color: white;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+        .apply-button-container {
+            margin-top: 50px;
+        }
+        .apply-button {
+            font-size: 1.3rem;
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            border: none;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            color: white;
+            text-transform: uppercase;
+        }
+        .apply-button:hover {
+            background: linear-gradient(to right, #ff512f, #b71c1c);
+            transform: scale(1.1);
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            animation: glow 1.5s infinite alternate;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        @keyframes glow {
+            0% { text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 3px 3px 20px rgba(255, 255, 255, 0.8); }
+        }
+    </style>
 </head>
 <body>
-    <div class="team-container">
-        <h1>4조 소개</h1>
-        <div class="team-members">
-            <div class="team-member" onclick="location.href='../suhyun/Introduce/html/index.html'">
-                <img src="../suhyun/introduce/IMG_3272.jpg" alt="팀원 1">
-                <h2>팀장: 신수현</h2>
+    <div class="container team-container">
+        <h1 class="mb-4">✨ 4조 소개 ✨</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member" onclick="location.href='../suhyun/Introduce/html/index.html'">
+                    <img src="../suhyun/introduce/IMG_3272.jpg" class="card-img-top" alt="팀장: 신수현">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">팀장: 신수현</h5>
+                    </div>
+                </div>
             </div>
-            <div class="team-member" onclick="location.href='../guntaek/main/main.html'">
-                <img src="../guntaek/image.png" alt="팀원 2">
-                <h2>팀원: 김건택</h2>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member" onclick="location.href='../guntaek/main/main.html'">
+                    <img src="../guntaek/image.png" class="card-img-top" alt="팀원: 김건택">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">팀원: 김건택</h5>
+                    </div>
+                </div>
             </div>
-            <div class="team-member" onclick="location.href='../gihwan/html/main.html'">
-                <img src="../gihwan/image.png" alt="팀원 3">
-                <h2>팀원: 박기환</h2>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member" onclick="location.href='../gihwan/html/main.html'">
+                    <img src="../gihwan/image.png" class="card-img-top" alt="팀원: 박기환">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">팀원: 박기환</h5>
+                    </div>
+                </div>
             </div>
-            <div class="team-member" onclick="location.href='../soyeon/main.html'">
-                <img src="../soyeon/image.png" alt="팀원 4">
-                <h2>팀원: 박소연</h2>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member" onclick="location.href='../soyeon/main.html'">
+                    <img src="../soyeon/image.png" class="card-img-top" alt="팀원: 박소연">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">팀원: 박소연</h5>
+                    </div>
+                </div>
             </div>
-            <div class="team-member" onclick="location.href='../leebonkyu/html/index.html'">
-                <img src="../leebonkyu/image.png" alt="팀원 5">
-                <h2>팀원: 이본규</h2>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member" onclick="location.href='../leebonkyu/html/index.html'">
+                    <img src="../leebonkyu/image.png" class="card-img-top" alt="팀원: 이본규">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">팀원: 이본규</h5>
+                    </div>
+                </div>
             </div>
-            <div class="team-member" onclick="location.href='../seongbin/html/main.html'">
-                <img src="../seongbin/image.png" alt="팀원 6">
-                <h2>팀원: 정성빈</h2>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member" onclick="location.href='../seongbin/html/main.html'">
+                    <img src="../seongbin/image.png" class="card-img-top" alt="팀원: 정성빈">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">팀원: 정성빈</h5>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="apply-button-container">
+            <a href="../apply/apply.html" class="btn btn-lg apply-button shadow">🚀 4조와 함께하기</a>
+        </div>
     </div>
-    <div class="apply-button-container">
-        <a href="../apply/apply.html" class="apply-button">4조와 함께하기</a>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
